@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | Systems Builder Lab</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+Thai:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root{--navy:#0A1628;--blue:#1B6CF8;--cyan:#22D3EE;--indigo:#6366F1;--white:#FFFFFF;--w70:rgba(255,255,255,0.70);--w40:rgba(255,255,255,0.40);--w06:rgba(255,255,255,0.06);--border:rgba(255,255,255,0.08)}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Inter','Noto Sans Thai',sans-serif;background:var(--navy);color:var(--white);line-height:1.65;overflow-x:hidden;min-height:100vh;display:flex;flex-direction:column}
+
+    nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:14px 48px;display:flex;align-items:center;justify-content:space-between;gap:24px;background:rgba(10,22,40,0.80);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+    .nav-brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--white)}
+    .nav-brand-text{font-size:15px;font-weight:700;letter-spacing:-.3px;line-height:1.2}
+    .nav-brand-sub{font-size:11px;color:var(--w40);font-weight:400}
+    .nav-links{display:flex;gap:28px;list-style:none}
+    .nav-links a{color:var(--w70);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
+    .nav-links a:hover,.nav-links a.active{color:var(--white)}
+    .nav-btn{background:var(--blue);color:var(--white);padding:8px 22px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap;transition:background .2s;box-shadow:0 0 20px rgba(27,108,248,.3)}
+    .nav-btn:hover{background:#3b82f6}
+
+    main{flex:1;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 24px 80px;position:relative;overflow:hidden}
+    main::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(27,108,248,.08) 0%,transparent 70%)}
+    .inner{position:relative;max-width:560px}
+    .label{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--cyan);margin-bottom:20px}
+    h1{font-size:clamp(36px,6vw,64px);font-weight:900;line-height:1.08;letter-spacing:-2px;margin-bottom:18px}
+    .g{background:linear-gradient(130deg,#fff 0%,#22D3EE 45%,#1B6CF8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    p{font-size:17px;color:var(--w70);line-height:1.75;margin-bottom:40px}
+    .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+    .btn-p{background:linear-gradient(135deg,#1B6CF8,#22D3EE);color:var(--white);padding:13px 30px;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;box-shadow:0 0 24px rgba(27,108,248,.4);transition:transform .2s,box-shadow .2s}
+    .btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(27,108,248,.55)}
+    .btn-s{background:var(--w06);border:1px solid rgba(255,255,255,.14);color:var(--white);padding:13px 30px;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;transition:background .2s,transform .2s}
+    .btn-s:hover{background:rgba(255,255,255,.08);transform:translateY(-2px)}
+
+    footer{border-top:1px solid var(--border);padding:28px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+    .footer-copy{font-size:12px;color:var(--w40)}
+    .footer-links{display:flex;gap:20px}
+    .footer-links a{font-size:12.5px;color:var(--w40);text-decoration:none;transition:color .2s}
+    .footer-links a:hover{color:var(--w70)}
+
+    @media(max-width:860px){nav{padding:14px 20px}.nav-links{display:none}footer{padding:24px 20px;flex-direction:column}}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">
+    <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+      <line x1="17" y1="17" x2="5"  y2="9"  stroke="#6366F1" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="17" y1="17" x2="29" y2="7"  stroke="#6366F1" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="17" y1="17" x2="29" y2="25" stroke="#22D3EE" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="17" y1="17" x2="9"  y2="28" stroke="#22D3EE" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="17" y1="17" x2="27" y2="17" stroke="#6366F1" stroke-width="1.5" stroke-linecap="round"/>
+      <circle cx="5"  cy="9"  r="3.5" fill="#6366F1"/>
+      <circle cx="29" cy="7"  r="2.8" fill="#6366F1"/>
+      <circle cx="29" cy="25" r="2.8" fill="#22D3EE"/>
+      <circle cx="9"  cy="28" r="3.5" fill="#22D3EE"/>
+      <circle cx="27" cy="17" r="2.2" fill="#6366F1"/>
+      <circle cx="17" cy="17" r="5.2" fill="#22D3EE"/>
+    </svg>
+    <div>
+      <div class="nav-brand-text">Systems Builder Lab</div>
+      <div class="nav-brand-sub">AI Automation</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#how">วิธีที่เราทำงาน</a></li>
+    <li><a href="guides.html">คู่มือ</a></li>
+    <li><a href="blog.html" class="active">Blog</a></li>
+    <li><a href="contact.html">ติดต่อ</a></li>
+  </ul>
+  <a href="contact.html" class="nav-btn">ติดต่อเรา</a>
+</nav>
+
+<main>
+  <div class="inner">
+    <div class="label">BLOG — เร็วๆ นี้</div>
+    <h1>บทความ<br><span class="g">กำลังมา</span></h1>
+    <p>เราจะเขียนบทความเกี่ยวกับ AI Automation, Claude และวิธีนำ AI ไปใช้จริงในธุรกิจไทย<br>รอติดตามเร็วๆ นี้</p>
+    <div class="cta-row">
+      <a href="guides.html" class="btn-p">ดูคู่มือฟรีระหว่างรอ &rarr;</a>
+      <a href="index.html" class="btn-s">กลับหน้าหลัก</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-copy">© 2026 Systems Builder Lab. All rights reserved.</div>
+  <div class="footer-links">
+    <a href="index.html">หน้าหลัก</a>
+    <a href="guides.html">คู่มือ</a>
+    <a href="contact.html">ติดต่อ</a>
+    <a href="https://www.facebook.com/systemsbuilderlab" target="_blank" rel="noopener">Facebook</a>
+    <a href="https://line.me/R/ti/p/@systemsbuilderlab" target="_blank" rel="noopener">LINE</a>
+  </div>
+</footer>
+
+</body>
+</html>
