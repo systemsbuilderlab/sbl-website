@@ -43,7 +43,9 @@
     .footer-links a{font-size:12.5px;color:var(--w40);text-decoration:none;transition:color .2s}
     .footer-links a:hover{color:var(--w70)}
 
-    @media(max-width:860px){nav{padding:14px 20px}.guide-header{padding:120px 20px 40px}.pdf-container{padding:0 16px 60px}.pdf-embed{height:70vh}footer{padding:24px 20px;flex-direction:column}}
+    .mobile-open{display:none;text-align:center;background:rgba(34,211,238,.07);border:1px solid rgba(34,211,238,.15);border-radius:12px;padding:20px;margin-bottom:16px}
+    .mobile-open p{font-size:13px;color:var(--w70);margin-bottom:14px}
+    @media(max-width:860px){nav{padding:14px 20px}.guide-header{padding:120px 20px 40px}.pdf-container{padding:0 16px 60px}.pdf-embed{height:70vh}footer{padding:24px 20px;flex-direction:column}.mobile-open{display:block}}
   </style>
 </head>
 <body>
@@ -85,6 +87,13 @@
 </div>
 
 <div class="pdf-container">
+  <div class="mobile-open" id="mobile-open">
+    <p>เปิดดูบน iPhone/iPad ได้เลย หรือดาวน์โหลดเก็บไว้</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <a href="ep2.pdf" target="_blank" class="btn-p">เปิดดู PDF ↗</a>
+      <a href="ep2.pdf" download class="btn-p" style="background:rgba(34,211,238,.13);border:1px solid rgba(34,211,238,.22);color:var(--cyan);box-shadow:none">ดาวน์โหลด ↓</a>
+    </div>
+  </div>
   <div class="pdf-embed">
     <object data="ep2.pdf" type="application/pdf" width="100%" height="100%">
       <div class="pdf-fallback">
